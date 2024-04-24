@@ -13,7 +13,7 @@ XData ProductionDefinition
     <Setting Target="Adapter" Name="CallInterval">60</Setting>
   </Item>
   <Item Name="MyApp.Service.GetFile" Category="" ClassName="MyApp.Service.GetFile" PoolSize="1" Enabled="false" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
-    <Setting Target="Adapter" Name="BlobNamePattern">test*.csv</Setting>
+    <Setting Target="Adapter" Name="BlobNamePattern">*.csv</Setting>
     <Setting Target="Adapter" Name="BucketName">mybucket</Setting>
     <Setting Target="Adapter" Name="StorageRegion">ap-northeast-1</Setting>
     <Setting Target="Adapter" Name="BlobNamePrefix">inbound</Setting>

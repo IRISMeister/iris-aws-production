@@ -9,7 +9,9 @@ Parameter ADAPTER = "EnsLib.CloudStorage.InboundAdapter";
 Method OnProcessInput(pInput As %RegisteredObject, pOutput As %RegisteredObject) As %Status
 {
   Set tSC=$$$OK
-  $$$TRACE(pInput)  
+  $$$TRACE("Name:"_pInput.Name)  
+  $$$TRACE("Meta:"_pInput.Meta)  
+  $$$TRACE("Size in bytes:"_pInput.Content.Size)
   Return tSC
 }
 
