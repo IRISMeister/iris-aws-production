@@ -1,0 +1,31 @@
+services:
+  iris:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: --ISCAgent false --monitorCPF false
+    ports:
+      - 1972:1972
+    volumes:
+    - ./UserCPF:/home/irisowner/cpf
+    environment:
+    - TZ=JST-9
+    - ISC_CPF_MERGE_FILE=/home/irisowner/cpf/merge.cpf
+    - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+    - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+
+  webgateway:
+    image: containers.intersystems.com/intersystems/webgateway:2024.1-preview
+    init: true
+    container_name: webgateway
+    hostname: webgateway
+    ports:
+    - "8080:80"
+    environment:
+    - ISC_CSP_CONF_FILE=/webgateway-shared/CSP.conf
+    - ISC_CSP_INI_FILE=/webgateway-shared/CSP.ini
+    volumes:
+    - type: bind
+      source: ./webgateway
+      target: /webgateway-shared
