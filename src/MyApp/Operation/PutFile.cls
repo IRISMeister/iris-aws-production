@@ -10,7 +10,7 @@ Parameter INVOCATION = "Queue";
 
 Method Exec(pRequest As Ens.Request, Output pResponse As Ens.Response) As %Status
 {
-  Set BucketName="mybucket/outbound"
+  Set BucketName="irismeister-bucket/outbound"
   Set filename="test1.csv"
   Set BlobName=filename
   Set localdir="/home/irisowner/"

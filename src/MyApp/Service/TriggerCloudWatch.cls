@@ -1,5 +1,5 @@
 /// 
-Class MyApp.Service.CloudWatch Extends Ens.BusinessService
+Class MyApp.Service.TriggerCloudWatch Extends Ens.BusinessService
 {
 
 Parameter ADAPTER = "Ens.InboundAdapter";
