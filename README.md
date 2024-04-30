@@ -98,3 +98,7 @@ aws sqs send-message --queue-url "${SQS_QUEUE_URL}" --message-body "Hello world"
 MyApp.Service.TriggerSQSを有効化すると、my_queueにメッセージが投函される。そのメッセージは上記のインバウンド動作(EnsLib.AmazonSQS.Service)をトリガする。
 
 > メッセージの送受信の無限ループにはなっていません
+
+## 関連
+
+https://jp.community.intersystems.com/node/521286
